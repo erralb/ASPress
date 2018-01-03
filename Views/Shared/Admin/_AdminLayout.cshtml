@@ -60,6 +60,11 @@
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
           <!-- User Account: style can be found in dropdown.less -->
+          <li>
+            <a href="@Url.Content("~/")">
+              Aller sur le site
+            </a>
+          </li>
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="~/AdminLTE/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
@@ -108,15 +113,15 @@
       <div class="row">
         <section class="col-lg-12 connectedSortable">
           <div class="box">
-            @RenderBody()
+            <div class="container">
+              @RenderBody()
+            </div>
           </div>
         </section>
       </div>
       <!-- /.row -->
       </section>
   </div>
-
-
 
   <!-- /.content-wrapper -->
   <footer class="main-footer">
@@ -165,7 +170,7 @@
     <script src="~/AdminLTE/dist/js/pages/dashboard.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="~/AdminLTE/dist/js/demo.js"></script>
-
+    
     @RenderSection("Scripts", required: false)
 </body>
 </html>
