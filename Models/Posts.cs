@@ -1,14 +1,12 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace ASPress.Models
 {
-    public partial class Posts
+    public partial class Posts : IEnumerable
     {
-        public Posts()
-        {
-            Comments = new HashSet<Comments>();
-        }
+        public Posts() => Comments = new HashSet<Comments>();
 
         public long Id { get; set; }
         public string Title { get; set; }
@@ -26,5 +24,10 @@ namespace ASPress.Models
 
         public Users Author { get; set; }
         public ICollection<Comments> Comments { get; set; }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

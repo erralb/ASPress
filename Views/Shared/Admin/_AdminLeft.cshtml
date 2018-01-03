@@ -1,0 +1,29 @@
+<!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+      <!-- sidebar menu: : style can be found in sidebar.less -->
+      <ul class="sidebar-menu" data-widget="tree">
+        <!-- <li class="header">MAIN NAVIGATION</li> -->
+        <li class="treeview">
+          <a href="@Url.Content("~/Admin/Posts")">
+            <i class="fa fa-files-o"></i>
+            <span>Posts</span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="@Url.Content("~/Admin/Posts")"><i class="fa fa-circle-o"></i> All posts</a></li>
+            <li><a href="@Url.Content("~/Admin/Posts/add")"><i class="fa fa-circle-o"></i> Add new post</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="@Url.Content("~/Admin/Comments")">
+            <i class="fa fa-th"></i> <span>Comments</span>
+            <span class="pull-right-container">
+              <span class="label label-primary pull-right">4</span>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </section>
+    <!-- /.sidebar -->
+  </aside>

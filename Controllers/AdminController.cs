@@ -8,27 +8,18 @@ using ASPress.Models;
 
 namespace ASPress.Controllers
 {
-
-    public class HomeController : Controller
+    public class AdminController : Controller
     {
-        private aspressContext db = new aspressContext();
-
         public IActionResult Index()
         {
-            return View(db.Posts.ToList());
-        }
-
-        public IActionResult About()
-        {
-            ViewData["Message"] = "Your application description page.";
-
             return View();
         }
-
-        public IActionResult Contact()
+        public IActionResult Posts()
         {
-            ViewData["Message"] = "Your contact page.";
-
+            return View();
+        }
+        public IActionResult Comments()
+        {
             return View();
         }
 
