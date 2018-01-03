@@ -1,0 +1,33 @@
+﻿@model ASPress.Models.Posts
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('/clean-blog/img/post-bg.jpg')">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="post-heading">
+              <h1>@Html.DisplayFor(model => model.Title)</h1>
+              <h2 class="subheading">@Html.DisplayFor(model => model.Url)</h2>
+              <span class="meta">Posté par @Html.DisplayFor(model => model.Author.Name) le @Html.DisplayFor(model => model.DatePublish)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Post Content -->
+    <article>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            
+            @Html.DisplayFor(model => model.Content)
+
+          </div>
+        </div>
+      </div>
+    </article>

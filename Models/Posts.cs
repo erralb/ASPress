@@ -1,13 +1,16 @@
-﻿using System;
-using System.Collections;
+﻿
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;    
 
 namespace ASPress.Models
 {
-    public partial class Posts : IEnumerable
+    public class Posts
     {
         public Posts() => Comments = new HashSet<Comments>();
 
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long Id { get; set; }
         public string Title { get; set; }
         public string Url { get; set; }
@@ -25,9 +28,5 @@ namespace ASPress.Models
         public Users Author { get; set; }
         public ICollection<Comments> Comments { get; set; }
 
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

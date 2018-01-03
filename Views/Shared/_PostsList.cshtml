@@ -1,0 +1,23 @@
+@model IEnumerable<ASPress.Models.Posts>
+
+@foreach(var item in Model){
+    <div class="post-preview">
+        <!-- <a href="@Url.Content("~/Home/Post")/@item.Id?name=@item.Url"> -->
+        <a href="@Url.Content("~/Home/Post")">
+        <h2 class="post-title">
+            @item.Title
+        </h2>
+        <h3 class="post-subtitle">
+            @item.Summary
+        </h3>
+        </a>
+        <p class="post-meta">Le @item.DatePublish</p>
+    </div>
+    <hr>
+}
+
+
+<!-- Pager -->
+<!-- <div class="clearfix">
+<a class="btn btn-secondary float-right" href="#">Older Posts &rarr;</a>
+</div> -->

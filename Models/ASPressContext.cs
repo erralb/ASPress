@@ -4,17 +4,21 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace ASPress.Models
 {
-    public partial class aspressContext : DbContext
+    public partial class ASPressContext : DbContext
     {
-        public virtual DbSet<Comments> Comments { get; set; }
-        public virtual DbSet<Meta> Meta { get; set; }
-        public virtual DbSet<Posts> Posts { get; set; }
-        public virtual DbSet<Roles> Roles { get; set; }
-        public virtual DbSet<Terms> Terms { get; set; }
-        public virtual DbSet<Users> Users { get; set; }
+        public  DbSet<Comments> Comments { get; set; }
+        public  DbSet<Meta> Meta { get; set; }
+        public  DbSet<Posts> Posts { get; set; }
+        public  DbSet<Roles> Roles { get; set; }
+        public  DbSet<Terms> Terms { get; set; }
+        public  DbSet<Users> Users { get; set; }
 
         // Unable to generate entity type for table 'roles_users'. Please see the warning messages.
         // Unable to generate entity type for table 'terms_posts'. Please see the warning messages.
+
+        public ASPressContext(DbContextOptions<ASPressContext> options)
+            : base(options)
+        { }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
