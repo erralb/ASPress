@@ -33,11 +33,14 @@ namespace ASPress.Controllers
 
             var posts = await _context.Posts
                 .Include(p => p.Author)
+                .Include(p => p.Comments)
                 .SingleOrDefaultAsync(m => m.Id == id);
             if (posts == null)
             {
                 return NotFound();
             }
+
+            
 
             return View(posts);
         }

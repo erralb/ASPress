@@ -1,0 +1,25 @@
+@using System.Linq
+
+@model IEnumerable<ASPress.Models.Comments>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Comments</h2>
+
+<ul>
+@if( !Model.Any() )
+{
+    <li><p>Pas encore de commentaire</p></li>
+}
+else
+{
+    @foreach (var item in Model) {
+        <li>
+        <h6>Posté par @Html.DisplayFor(modelItem => item.Name) le @Html.DisplayFor(modelItem => item.Date)</h6>
+        <p>@Html.DisplayFor(modelItem => item.Comment)</p>
+        </li>
+    }
+}
+</ul>
