@@ -21,7 +21,9 @@ namespace ASPress.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var aSPressContext = _context.Posts.Include(p => p.Author);
+            var aSPressContext = _context.Posts
+                                .Where(p => p.Status == "published")
+                                .Include(p => p.Author);
             return View(await aSPressContext.OrderByDescending(i => i.DatePublish).ToListAsync());
         }
 
