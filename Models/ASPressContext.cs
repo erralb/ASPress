@@ -39,7 +39,8 @@ namespace ASPress.Models
 
                 entity.Property(e => e.Id)
                     .HasColumnName("id")
-                    .ValueGeneratedNever();
+                    // .ValueGeneratedNever()
+                    ;
 
                 entity.Property(e => e.Comment).HasColumnName("comment");
 
@@ -83,7 +84,8 @@ namespace ASPress.Models
 
                 entity.Property(e => e.Id)
                     .HasColumnName("id")
-                    .ValueGeneratedNever();
+                    // .ValueGeneratedNever()
+                    ;
 
                 entity.Property(e => e.Key)
                     .IsRequired()
@@ -116,7 +118,8 @@ namespace ASPress.Models
 
                 entity.Property(e => e.Id)
                     .HasColumnName("id")
-                    .ValueGeneratedNever();
+                    // .ValueGeneratedNever()
+                    ;
 
                 entity.Property(e => e.AuthorId)
                     .HasColumnName("author_id")
@@ -189,7 +192,8 @@ namespace ASPress.Models
 
                 entity.Property(e => e.Id)
                     .HasColumnName("id")
-                    .ValueGeneratedNever();
+                    // .ValueGeneratedNever()
+                    ;
 
                 entity.Property(e => e.Name)
                     .HasColumnName("name")
@@ -218,7 +222,8 @@ namespace ASPress.Models
 
                 entity.Property(e => e.Id)
                     .HasColumnName("id")
-                    .ValueGeneratedNever();
+                    // .ValueGeneratedNever()
+                    ;
 
                 entity.Property(e => e.ImageId).HasColumnName("image_id");
 
@@ -256,7 +261,8 @@ namespace ASPress.Models
 
                 entity.Property(e => e.Id)
                     .HasColumnName("id")
-                    .ValueGeneratedNever();
+                    // .ValueGeneratedNever()
+                    ;
 
                 entity.Property(e => e.DateCreated)
                     .IsRequired()
