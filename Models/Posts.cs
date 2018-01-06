@@ -11,7 +11,8 @@ namespace ASPress.Models
     {
         public Posts() => Comments = new HashSet<Comments>();
 
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long Id { get; set; }
         public string Title { get; set; }
         public string Url { get; set; }

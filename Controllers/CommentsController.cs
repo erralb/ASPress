@@ -47,7 +47,7 @@ namespace ASPress.Controllers
         // GET: Comments/Create
         public IActionResult Create()
         {
-            ViewData["PostId"] = new SelectList(_context.Posts, "Id", "DateCreated");
+            ViewData["PostId"] = new SelectList(_context.Posts, "Id", "Title");
             return View();
         }
 
@@ -56,7 +56,7 @@ namespace ASPress.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Email,Name,Comment,PostId,Date,Status")] Comments comments)
+        public async Task<IActionResult> Create([Bind("Email,Name,Comment,PostId,Date,Status")] Comments comments)
         {
             if (ModelState.IsValid)
             {
@@ -64,7 +64,7 @@ namespace ASPress.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["PostId"] = new SelectList(_context.Posts, "Id", "DateCreated", comments.PostId);
+            ViewData["PostId"] = new SelectList(_context.Posts, "Id", "Title", comments.PostId);
             return View(comments);
         }
 
