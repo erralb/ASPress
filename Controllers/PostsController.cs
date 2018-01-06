@@ -64,7 +64,7 @@ namespace ASPress.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["AuthorId"] = new SelectList(_context.Users, "Id", "DateCreated", posts.AuthorId);
+            ViewData["AuthorId"] = new SelectList(_context.Users, "Id", "Name", posts.AuthorId);
             return View(posts);
         }
 
@@ -81,7 +81,7 @@ namespace ASPress.Controllers
             {
                 return NotFound();
             }
-            ViewData["AuthorId"] = new SelectList(_context.Users, "Id", "DateCreated", posts.AuthorId);
+            ViewData["AuthorId"] = new SelectList(_context.Users, "Id", "Name", posts.AuthorId);
             return View(posts);
         }
 

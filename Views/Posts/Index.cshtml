@@ -17,24 +17,25 @@ ViewData["Title"] = "Index";
         <th>
             @Html.DisplayNameFor(model => model.Url)
         </th>
-        <!-- <th>
-            @Html.DisplayNameFor(model => model.Status)
-        </th>
+        <!-- 
         <th>
             @Html.DisplayNameFor(model => model.Visibility)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.DateCreated)
-        </th> -->
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.DateModified)
-        </th>
+        </th> -->
         <th>
             @Html.DisplayNameFor(model => model.DatePublish)
         </th>
-    <th>
-        @Html.DisplayNameFor(model => model.Author)
-    </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Author)
+        </th>
     <th>Actions</th>
 </tr>
 </thead>
@@ -47,9 +48,7 @@ ViewData["Title"] = "Index";
     <td>
         @Html.DisplayFor(modelItem => item.Url)
     </td>
-    <!-- <td>
-        @Html.DisplayFor(modelItem => item.Status)
-    </td>
+    <!-- 
     <td>
         @Html.DisplayFor(modelItem => item.Visibility)
     </td> 
@@ -61,6 +60,9 @@ ViewData["Title"] = "Index";
     </td> -->
     <td>
         @Html.DisplayFor(modelItem => item.DatePublish)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Status)
     </td>
     <td>
         @Html.DisplayFor(modelItem => item.Author.Name)

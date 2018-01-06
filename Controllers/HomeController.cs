@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ASPress.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace ASPress.Controllers
 {
@@ -35,6 +32,19 @@ namespace ASPress.Controllers
             }
 
             var posts = await _context.Posts
+                // // .Select(p => new 
+                // // { 
+                // //     p,
+                // //     Comments = p.Comments
+                // //     .Where(c => c.Status == "approved")
+                // // })
+                // .Select(p => new 
+                // { 
+                //     Posts=p,
+                //     Comments = p.Comments.Where(c=>c.Status == "approved")                   
+                // })
+                // .SingleOrDefaultAsync(m => m.Posts.Id == id);
+                
                 .Include(p => p.Author)
                 .Include(p => p.Comments)
                 .SingleOrDefaultAsync(m => m.Id == id);

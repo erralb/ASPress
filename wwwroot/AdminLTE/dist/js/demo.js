@@ -347,6 +347,18 @@ $(function () {
 
   $('[data-toggle="tooltip"]').tooltip();
 
-  jQuery('.editor').wysihtml5();
+  $('.editor').wysihtml5();
+
+  // $('.dates').datepicker({
+  //   // dateFormat: "dd/mm/yy",
+  //     dateFormat: "mm/dd/yyyy",
+  //     showStatus: true,
+  //     showWeeks: true,
+  //     currentText: 'Now',
+  //     autoSize: true,
+  //     gotoCurrent: true,
+  //     showAnim: 'blind',
+  //     highlightWeek: true
+  // });
   
 })

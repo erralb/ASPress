@@ -81,7 +81,7 @@ namespace ASPress.Controllers
             {
                 return NotFound();
             }
-            ViewData["PostId"] = new SelectList(_context.Posts, "Id", "DateCreated", comments.PostId);
+            ViewData["PostId"] = new SelectList(_context.Posts, "Id", "Title", comments.PostId);
             return View(comments);
         }
 
@@ -118,6 +118,13 @@ namespace ASPress.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["PostId"] = new SelectList(_context.Posts, "Id", "DateCreated", comments.PostId);
+            // ViewData["StatusList"] = new SelectList(
+            //                             new List<SelectListItem>
+            //                             {
+            //                                 new SelectListItem {Text = "awaiting", Value = "Awaitin"},
+            //                                 new SelectListItem {Text = "approved", Value = "Approved"},
+            //                                 new SelectListItem {Text = "refused", Value = "Refused"},
+            //                             }, "Value", "Text");
             return View(comments);
         }
 
